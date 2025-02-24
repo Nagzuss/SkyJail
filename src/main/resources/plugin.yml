@@ -1,0 +1,25 @@
+name: SkyJail
+description: Le Jail de SkyMc
+author: Nagzuss
+version: 1.0
+main: fr.nagzuss.Main
+commands:
+  jail:
+    description: Met un joueur en prison
+    usage: /jail <joueur> [temps]
+    permission: jail.jail
+  unjail:
+    description: Libère un joueur
+    usage: /unjail <joueur>
+    permission: jail.unjail
+  setjail:
+      description: Définit la position de la prison
+      usage: /setjail
+      permission: jail.set
+permissions:
+  jail.jail:
+    default: op
+  jail.set:
+    default: op
+  jail.unjail:
+    default: op

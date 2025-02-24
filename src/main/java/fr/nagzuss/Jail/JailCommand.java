@@ -6,22 +6,17 @@ import co.aikar.commands.annotation.CommandPermission;
 import fr.neskuik.core.api.player.PlayerAPI;
 import org.bukkit.entity.Player;
 
-
 @CommandAlias("jail")
 @CommandPermission("jail.use")
 public class JailCommand extends BaseCommand {
 
-    PlayerAPI playerapi;
-    Player player;
+    PlayerAPI playerAPI;
 
-
-    public void onCommand(Player player) {
-
-
-        playerapi.sendMessage("Vous venez d'être mis en jail pour les raison :" + reason + "pour une durer de :" + time);
-
-
-
+    public JailCommand(PlayerAPI playerAPI) {
+        this.playerAPI = playerAPI;
     }
 
+    public void onCommand(Player player, String reason, String time) {
+        playerAPI.sendMessage("Vous venez d'être mis en prison pour les raison : " + reason + " pour une durée de : " + time, player);
+    }
 }
